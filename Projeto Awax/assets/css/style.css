@@ -1,0 +1,1642 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif; /*Quando for colocar uma fonte externa ela sempre tem que estar dentro de aspas.*/
+    font-size: 13px;
+    overflow-x: hidden; /*Todo o conteúdo que ultrapassar a horizontal será ignorado. Isso serve para não criar uma barra de rolagem horizontal.*/
+}
+
+header{
+    height: 100px;
+    background-color: black;
+    color:white;
+}
+
+.class-header{
+    max-width: 1140px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    align-items: center; /*Adicionando o display:flex e o align-items center, eu fiz com que todo o conteúdo dentro do meu header ficasse centralizado verticalmente*/
+}
+
+.logo{
+    width:100px;
+}
+
+.logo-img{
+    width: 80px;
+    height: 80px;
+    background-color: #B28756;
+    border-radius: 40px;
+}
+
+.menu{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-opener{
+    display: none;
+}
+
+.menu ul,
+.menu li{
+    list-style: none;
+}
+
+.menu ul{
+    display: flex;
+}
+
+.menu li a{
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    padding-left:10px;
+    padding-right:10px;
+    height: 100px; /*Para fazer com que o meu ''a'' fique do tamanho limite do header e a borda inferior fique exatamente em cima da linha, além disso também serviu para todo o espaço que a opção ocupa fique clicável.*/
+
+    display: flex; /*Foi adicionado o display:flex porque eu preciso fazer a barrinha de rolagem quando passa o mouse em cima do menu e por ele ser um item ''inline'', eu não consigo dar uma altura para ele, então, tive que transformar ele em um elemento bloco.*/
+    align-items: center;
+    border: 5px solid black; /*Aqui foi adicionado essa borda para o meu texto não crescer quando eu passar o mouse em cima dele com o efeito do ''hover''.*/
+}
+
+.menu li a:hover, 
+.menu .active a{
+    border-bottom: 5px solid #B28756;
+    color: rgb(209, 208, 208);
+}
+
+
+/*BANNER (DENTRO DO SECTION)*/
+
+.banner{
+    height: calc(100vh - 100px); /*Aqui entrou a função ''calc'' para poder tirar a barra de rolagem da tela, pois essa imagem de fundo + o header eles precisam ser exatamente do tamanho da tela do monitor do usuário, então, eu fiz com que ela tivesse 100vh menos 100px do meu header (100px é o tamanho da altura do meu header, se ele tivesse 200px de altura seria ''-200px''.)*/
+    background-color: #333;
+    background-image: url('../images/bg.jpg');
+    background-size: cover; /*Aqui eu indico para a minha imagem de fundo cobrir o tamanho máximo da área disponível e para ela ficar ajustada.*/
+    background-position:center ; /*Essa propriedade vai priorizar a parte da imagem que eu escolher, se eu escolher ''bottom'', vai aparecer mais da parte de baixo da imagem e etc.*/
+    overflow: hidden; /*Usado para tirar a barra de rolagem dos slides, ele significa que tudo o que for maior que o tamanho do meu ''banner'' não vai aparecer mas estará lá.*/
+}
+
+.banner .sliders{
+    width: 1000vw; /*Significa que essa minha class ela precisa ter 10x o tamanho da minha class ''slide'' para que possa ficar um ao lado do outro.*/
+    height: 100%;
+}
+
+.banner .slide{
+    width: 100vw;
+    height: 100%;
+    display:inline-block; /*Esse display serve para deixarmos os slides um ao lado do outro, inline vai deixá-los ao lado e o block para ele manter as proporcionalidades que colocarmos aqui (altura, largura e etc), já que essas propriedades só podem ser colocadas em blocos.*/
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.banner .slidearea{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    color: white;
+    justify-content: center;
+}
+
+.banner h1{
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.banner h1 span{
+    color: #B28756;
+}
+
+.banner h2{
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.banner .slidearea a{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding-top: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 30px; /*O padding aqui serviu para deixarmos o tamanho da área do botão sem precisar usar ''width e height''.*/
+    background-color: #B28756;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.banner .sliders-pointers{
+    width: 100vw;
+    height: 20px;
+    position: absolute; /*Serviu para fazer com que o banner apareça, se não estivesse com essa propriedade o meu pointer não iria aparecer devido ao ''overflow'' já que a área do pointer ultrapassaria o limite da área do meu ''banner''.*/
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .sliders-pointers .pointer{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #B28756;
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.banner .sliders-pointers .active{
+    background-color: #B28756;
+}
+
+/*SECTION DEFAULT*/
+
+.default{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.default .section-tittle, 
+.default .section-desc{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.default .section-tittle{
+    font-size: 20px;
+}
+
+.default .section-desc{
+    font-size: 12px;
+    color: #ccc;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.default .section-body{
+    max-width: 1140px;
+    margin: auto;
+}
+
+.default.light{
+    background-color: #f7f7f7;
+}
+
+.default.light .section-tittle,
+.defaltu.light .section-body {
+    color: black;
+}
+
+.default.dark{
+    background-color: black;
+    color: white;
+}
+
+.default.dark .section-tittle,
+.defaltu.dark .section-body{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CSS ÁREAS ESPECÍFICAS
+*/
+
+.section-aboutus{
+    display: flex; /*Para as 2 divs ficarem uma ao lado da outra.*/
+}
+
+.section-aboutus-left{
+    flex: 1;
+}
+
+.section-aboutus-left p{
+    font-size: 14px;
+    line-height: 25px;
+    color: rgb(29, 29, 29);
+}
+
+.section-aboutus-right{
+    width: 520px;
+    text-align: center;
+}
+
+.section-aboutus-right img{
+    width: 480px;
+    box-shadow: 0px 5px 10px #333
+}
+
+.button{
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding-top: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 30px; /*O padding aqui serviu para deixarmos o tamanho da área do botão sem precisar usar ''width e height''.*/
+    background-color: #B28756;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+
+
+
+
+/*Service Area*/
+
+.section-services{
+    display: flex;
+    color: white;
+    max-width: 1140px;
+}
+.section-service{
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #505050 ; /*Aqui eu só pude usar a borda na direita porque se colocasse esquerda e direita iria dar ruim devido que ficaria uma sobreposta a outra.*/
+    padding: 15px;
+}
+.section-service:first-child{ /*Usei isso para selecionar o primeiro item apenas da minha ''section-service''*/
+    border-left: 1px solid #505050;
+}
+
+.section-service h4{
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.section-service p{
+    font-size: 13px;
+    color: #929090;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+/*Projects Area*/
+
+.section-projects{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.section-projects-filter{ /*Fazendo o menu dessa forma aqui economiza muito mais código.*/
+    border: 1px solid #ccc;
+    background-color: #eee;
+    border-radius: 30px;
+    display: inline-block; /*Colocar isso aqui fez com que a width dessa parte ficasse do tamanho certo*/
+    padding: 0px 20px; /*Serviu para dar esse espaçamento nas laterais entre a primeira e última palavra e a borda.*/
+}
+
+.section-projects-filter ul,
+.section-projects-filter li {
+    list-style: none;
+}
+
+.section-projects-filter li { /*Fazendo o menu dessa forma aqui economiza muito mais código.*/
+    display: inline-block;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-right: 1px solid #ccc;
+    color: #555;
+    border-bottom: 3px solid #eee; /*Para fazer o mesmo efeito da borda que utilizamos no header*/
+    cursor: pointer;
+}
+
+.section-projects-filter li:hover,
+.section-projects-filter li.active{
+    border-bottom: 3px solid #B28756 ;
+}
+
+.section-projects-filter li:last-child{
+    border-right: 0;
+}
+
+/*Área das fotos*/
+
+.section-projects-photos{
+    width:100vw; /*Se o monitor for pequeno ele vai pegar 100% da largura disponível*/
+    max-width: 1140px; /*E se o monitor for muito grande ele vai ter uma largura máxima de 1140px.*/
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /*Vai fazer com que haja uma quebra de linha*/
+    justify-content: center;
+}
+
+.section-mural-photo{
+    width:280px;
+}
+
+.section-projects-photoarea{
+    width: 260px;
+    margin: 10px;
+    height: 160px;
+}
+
+.section-projects-photoarea img{
+    width:inherit; /*Isso serve para ele herdar os valores do elemento anterior*/
+    height: inherit;
+}
+
+.section-projects-photoinfo{
+    position: absolute; /*Isso aqui foi para os textos e o RGBA ficarem sobrepostos a foto.*/
+    background-color: rgba(0, 0, 0, 0.5);
+    width: inherit;
+    height: inherit;
+    display: none; /*Serviu para fazer com que o backgeround e o texto não aparecesse na foto até passar o mouse por cima.*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.section-projects-photoinfo h5{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.section-projects-photoarea:hover .section-projects-photoinfo{ /*Aqui quando eu passar o mouse em cima da foto ela vai receber as propriedades da minha class ''photoinfo'', se eu não passar o mouse o meu ''photoinfo'' não vai aparecer nada porque ele está com o ''display:none''*/
+    display: flex;
+}
+
+
+/*Our Teamm Área*/
+
+.bg-image{
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 0px;
+}
+
+.section-team-area{
+    background-color: rgba(0, 0, 0, 0.8 );
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+/*SLIDE AREA*/
+
+.section-team{
+    overflow: hidden; /*Para esconder a área dos sliders que passaram da largura.*/
+    max-width: 880px; /*Serviu para diminuir a largura desse espaço e caber apenas 3 sliders.*/
+    margin: auto;
+}
+
+.section-team-area .sliders{
+    width: 1000vw; /*Significa que essa minha class ela precisa ter 10x o tamanho da minha class ''slide'' para que posso ficar um ao lado do outro.*/
+    height: 100%;
+}
+
+.section-team-area .slide{
+    width: 280px;
+    height: 100%;
+    min-height: 300px;
+    margin-right: 20px;
+    display:inline-block; /*Esse display serve para deixarmos os slides um ao lado do outro, inline vai deixá-los ao lado e o block para ele manter as proporcionalidades que colocarmos aqui (altura, largura e etc), já que essas propriedades só podem ser colocadas em blocos.*/
+    background-color:white;
+}
+
+.section-team-area .slidearea{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    color: #000;
+    justify-content: center;
+    padding: 30px;
+}
+
+.section-team-area .sliders-pointers{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.section-team-area .sliders-pointers .pointer{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #B28756;
+    border-radius: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.section-team-area .sliders-pointers .active{
+    background-color: #B28756;
+}
+
+
+/*INÍCIO DA ÁREA DOS FUNCIONNÁRIOS*/
+
+.section-team-avatar{
+    width: 150px;
+    height: auto; /*Altura dessa forma faz que tenha basicamente o mesmo tamanho da largura.*/
+}
+
+.section-team-name{
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.section-team-role{
+    color:#505050;
+    margin-top:5px;
+    font-size: 11px;
+}
+
+.section-team-social{
+    display: flex;
+    margin-top: 20px;
+}
+
+.section-team-social a{
+    display: inline-flex; /*Para poder adquirir as propriedades de blocos e também colocar as propriedades do flexbox.*/
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    width: 25px;
+    height: 25px;
+    border-radius: 13px;
+    margin-right:10px;
+}
+
+.section-team-social a:hover{
+    background-color: #B28756;
+}
+
+
+
+/*ÁREA TESTEMUNHA*/
+
+.testemunhas .section-body {
+    max-width:initial;
+}
+
+.section-testemunhas{
+    overflow: hidden;
+}
+
+.section-testemunhas .sliders{
+    width: 1000vw; /*Significa que essa minha class ela precisa ter 10x o tamanho da minha class ''slide'' para que posso ficar um ao lado do outro.*/
+    height: 100%;
+}
+
+.section-testemunhas .slide{
+    width: 100vw;
+    height: 100%;
+    display: inline-block;
+}
+
+.section-testemunhas .slidearea{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-testemunha-avatar{
+    width: 100px;
+}
+
+.section-testemunha-nome{
+    font-weight:bold;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.section-testemunha-funcao{
+    font-size: 14px;
+}
+
+.section-testemunhas-quote{
+    width: 20px;
+    margin-top: 30px;
+}
+
+.section-testemunha-desc{
+    margin-top:10px;
+    font-size:13px;
+    max-width:700px;
+    color:#555;
+    text-align:center;
+    line-height:25px;
+    margin-left:30px;
+    margin-right:30px;
+}
+
+.section-testemunhas .sliders-pointers {
+    width:100vw;
+    height:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:40px;
+}
+.section-testemunhas .pointer {
+    width:15px;
+    height:15px;
+    border:2px solid #B28756;
+    border-radius:8px;
+    margin-left:5px;
+    margin-right:5px;
+    cursor:pointer;
+}
+.section-testemunhas .pointer.active {
+    background-color:#B28756;
+}
+
+/*iNICIO DA ÁREA COMPANHIAS*/
+
+.default .section-empresas{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.section-area-empresas{
+    display: flex;
+    align-items: center;
+}
+
+.section-area-empresas .section-logo-empresas{
+    flex: 1; /*Serviu para fazer o espaçamento entre os itens mas eu poderia ter usado space-around*/
+}
+
+
+/*AREA PRICE*/
+
+.section-price{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.section-price .price-area{
+    flex: 1;
+    background-color: #fff;
+    margin-right: 30px;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+
+.price-area:last-child{
+    margin-right: 0px;
+}
+
+.price-area .price-tittle{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.price-area .price-value{
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+.price-area .price-mes{
+    text-transform: uppercase;
+    color: #929090;
+    margin-bottom: 20px;
+}
+
+.price-area .price-button{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFF;
+    display: inline-block;
+    padding: 10px 35px 10px 35px;
+    background-color: black;
+    border-radius: 18px;
+    margin-top: 30px;
+}
+
+.price-area .price-button:hover{
+    background-color: #B28756;
+}
+
+
+/*ÁREA PREMIUM*/
+
+.default .premium{
+    border-top: 1px solid black !important; 
+    background-color: #FFF;
+}
+
+.premium .section-body{
+    max-width: initial;
+}
+
+.section-premium{
+ overflow:hidden;
+}
+
+.section-premium .sliders{
+    width: 1000vw;
+    height: 100%;
+}
+
+.section-premium .slide{
+    width: 100vw;
+    height: 100%;
+    display: inline-block;
+}
+
+.section-premium .slidearea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 1140px;
+    margin: auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgb(206, 205, 205);
+}
+
+.section-premium .section-premium-left{
+    flex: 1;
+    text-align: right; /*Foi usado para alinhar a imagem a direita dentro da div.*/
+}
+
+.section-premium .section-premium-left img{
+    width: 350px;
+    margin-right: 40px;
+}
+
+.section-premium .section-premium-right{
+    flex: 1;
+}
+
+.section-premium .section-premium-right img{
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+
+.section-premium-right .section-premium-item{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.section-premium-item h4{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.section-premium-item p{
+    margin-top: 12px;
+    color: #929090;
+}
+
+.section-premium-item span{
+    color: #929090;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.section-premium .sliders-pointers{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.section-premium .pointer{
+    width:15px;
+    height:15px;
+    border:2px solid #B28756;
+    border-radius:8px;
+    margin-left:5px;
+    margin-right:5px;
+    cursor:pointer;
+}
+
+.section-premium .pointer.active {
+    background-color:#B28756;
+}
+
+.section-premium .botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-premium .botao a{
+    padding: 10px 30px;
+    background-color: #B28756;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+
+
+
+/*AREA FACTS*/
+
+.section-facts{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.section-fact{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-fact:last-child{
+    margin-right: 0px;
+}
+
+.section-fact .tittle-fact{
+    color: #B28756;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-fact .border{
+    height: 3px;
+    width: 20px;
+    background-color:#505050;
+
+}
+
+.section-fact .desc-fact{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 20px;
+    
+}
+
+.section-fact p{
+    color:#929090;
+    line-height: 20px;
+    margin-top: 20px;
+}
+
+/*ÁREA DE COMPARTILHAMENTO DAS REDES SOCIAIS*/
+
+.share-background{
+    background-color: #fff;
+    border-bottom: 1px solid rgb(209, 206, 206);
+}
+
+.section-share{
+    display: flex;
+    justify-content: center;
+}
+
+.section-share .section-rede-social{
+    display: flex;
+    align-items: center;
+    margin-left: 35px;
+}
+
+.section-rede-social .share{
+   margin-right: 10px;
+}
+
+.section-rede-social .twitter{
+    display: inline-flex; /*Para poder adquirir as propriedades de blocos e também colocar as propriedades do flexbox.*/
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(4, 199, 248);
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    margin-right:3px;
+}
+
+.section-rede-social .linkedin{
+    display: inline-flex; /*Para poder adquirir as propriedades de blocos e também colocar as propriedades do flexbox.*/
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(54, 93, 165);
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    margin-right:3px;
+}
+
+.section-rede-social .facebook{
+    display: inline-flex; /*Para poder adquirir as propriedades de blocos e também colocar as propriedades do flexbox.*/
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(40, 101, 233);
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    margin-right:3px;
+}
+
+.section-rede-social .googleplus{
+    display: inline-flex; /*Para poder adquirir as propriedades de blocos e também colocar as propriedades do flexbox.*/
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(247, 83, 19);
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    margin-right:3px;
+}
+
+.section-rede-social .pinterest{
+    display: inline-flex; /*Para poder adquirir as propriedades de blocos e também colocar as propriedades do flexbox.*/
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(248, 29, 29);
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    margin-right:3px;
+}
+
+.section-rede-social .tittle-share{
+    text-transform: uppercase;
+    color:#929090;
+    font-weight: 600;
+    margin-right: 70px;
+}
+
+.section-rede-social .desc-share{
+    padding: 3px;
+    font-size: 10px;
+    color:#929090;
+    font-weight: 600;
+}
+
+/*ÁREA DE CONTATO*/
+
+.section-contact-us{
+    max-width: 450px;
+    margin: auto;
+    text-align: center;
+}
+
+.section-contact-us input[type=text],
+.section-contact-us textarea{
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+    outline: 0;
+    margin-top: 10px;
+}
+
+.section-contact-us textarea{
+    height: 100px;
+    resize: none;
+
+}
+
+.section-form-contact{
+    display: flex;
+}
+
+.section-contact-us input:first-child{
+    margin-right: 20px;
+}
+
+.section-contact-us input[type=submit]{
+    margin-top: 30px;
+    border-color: transparent;
+    background-color: #B28756;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 28px 10px 28px;
+    border-radius: 18px;
+    outline: 0;
+}
+
+
+
+
+/*ÁREA DO MAPA*/
+
+.section-map{
+    background-image: url('../images/mapa.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0px 30px 0px;
+}
+
+.section-map-area{
+    width: 100vw;
+    max-width: 1140px;
+    margin: auto;
+}
+
+.section-map-info{
+    background-color: #fff;
+    color: black;
+    width: 50%; /*Serviu para essa minha div ocupar somente metade do tamanho da outra div.*/
+    padding: 30px;
+}
+
+.section-map-info-item{
+    display:flex;
+    align-items:center;
+    color:#999;
+    margin-bottom:10px;
+}
+
+.section-map-info-item-img {
+    width:30px;
+    height:30px;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    background-color:#999;
+    border-radius:15px;
+    margin-right:15px;
+}
+
+.section-map-info-item-img img {
+    width:15px;
+    height:auto;
+}
+
+
+/*ÁREA DO FOOTER*/
+
+.section-body .section-footer{
+    display: flex;
+    justify-content: center;
+}
+
+.redes-sociais-footer{
+    flex: 1;
+    margin-right: 30px;
+    flex-direction: column;
+}
+
+.redes-sociais-footer .img-footer{
+    width: 30px;
+    height: 30px;
+    background-color: #505050;
+    border-radius: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0px 3px 0px 0px;
+}
+
+.redes-sociais-footer .img-footer.active{
+    background-color: #B28756;
+}
+
+.redes-sociais-footer .img-footer:hover{
+    background-color: #B28756;
+}
+
+.redes-sociais-footer .footer-awax{
+    margin-top: 110px;
+    font-weight: 600;
+}
+
+.section-body .text-footer{
+    flex: 1;
+    margin-right: 30px;
+}
+
+.section-body .text-footer p{
+    text-indent: 30px;
+    line-height: 20px;
+}
+
+.section-body .form-footer{
+    flex: 1;
+    background-color: #555;
+}
+
+.section-body .form-footer form input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    outline: 0; /*Serve para tirar as bordas do input que criam na hora em que clico nele para digitar algo.*/
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-top: 35px;
+    width: 250px;
+    color: white;
+}
+
+.section-body .form-footer form input::placeholder{
+    color: #ccc;
+}
+
+.form-footer .link-footer{
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+
+}
+
+.section-body .form-footer a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 35px 10px 35px;
+    background-color: #B28756;
+    border-radius: 20px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+
+
+
+
+/*RESPONSIVIDADE*/
+
+
+
+
+@media (min-width:450px) and (max-width:800px){
+
+.class-header .logo{
+    margin-left: 30px;
+}
+
+.menu .menu-opener{
+        width: 45px;
+        margin-right: 40px;
+        display: block; /*Se eu não colocar esse display aqui ele simplesmente não vai aparecer na minha tela do tamanho do ipad.*/
+}
+    
+
+nav{
+    display: none;
+    position: absolute; /*Deixou o meu header sobreposto*/
+    z-index: 99; /*Também serve para fazer isso, deixar ele sobreposto*/
+    width: 80%;
+    height: calc(100vh - 100px); /*Tem que fazer isso igual fiz no header para poder fazer com que o cabeçalho fique na altura certa pegando 100% da vh.*/
+    background-color: rgba(0, 0, 0, 0.9);
+    top: 100px; /*Como eu use o position, essa tag foi necessária para o meu cabeçalho abrir com uma margn de 100px no top para continuar do tamanho da vh.*/
+    right: 0px; /*Colou o meu header ao lado da tela na parte da direita.*/
+    
+}
+
+.menu ul{
+    flex-direction: column; /*Deixei o meu header na vertical*/
+}
+
+.menu li a{
+    border: 0; /*Tirei as border que tinha no fundo*/
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: 27px;
+    height: 80px;
+}
+
+.menu li.active a{
+    border: 0; /*Aqui também tirei a borda do meu ''li'' que estava com o active.*/
+    color: #B28756;
+}
+
+
+
+
+
+
+.section-aboutus{
+    flex-direction: column;
+
+}
+
+.section-aboutus-left p{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.section-aboutus-left a{
+    margin-bottom: 35px;
+    margin-left: 310px;
+}
+
+.section-aboutus-right{
+    width: auto; /*Serviu para tirar a largura da minha imagem*/
+}
+
+
+
+
+
+.section-services{
+    flex-wrap: wrap;
+}
+
+.section-service{
+    min-width: 50%;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+.section-area-empresas{
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+.section-logo-empresas{
+    margin-right: 25px;
+}
+
+
+
+
+
+.section-price{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+}
+
+.section-price .price-area{
+    min-width: 50%;
+    margin-bottom: 30px;
+    margin: 20px 20px 20px 20px;
+    flex: 0;
+    
+}
+
+
+
+
+
+.section-team{
+    max-width: 580px;
+}
+
+.slidearea .section-premium-left{
+    margin-left: 20px;
+}
+
+.slidearea .section-premium-right{
+    margin-right: 20px;
+}
+
+
+
+
+.section-facts{
+    flex-wrap: wrap;
+}
+
+.section-fact{
+    min-width: 50%;
+    margin-bottom: 30px;
+}
+
+
+
+
+.section-share{
+    margin-right: 60px;
+}
+
+
+
+
+
+
+.section-map{
+    padding: 30px;
+}
+
+.section-map-area{
+    width: auto;
+}
+
+.section-map-info{
+    width: auto;
+}
+
+.section-map-info-item{
+    margin-bottom: 20px;
+}
+
+.section-map-info-item:last-child{
+    margin-bottom: 0px;
+}
+
+
+
+
+
+
+.section-footer{
+    flex-direction: column;
+}
+
+.section-footer .redes-sociais-footer{
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.text-footer{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.section-body .form-footer{
+    margin-top: 30px;
+    padding-bottom: 50px;
+}
+
+footer .default{
+    padding: 0;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:450px){
+
+    .class-header .logo{
+        margin-left: 30px;
+    }
+    
+    .menu .menu-opener{
+            width: 45px;
+            margin-right: 40px;
+            display: block; /*Se eu não colocar esse display aqui ele simplesmente não vai aparecer na minha tela do tamanho do ipad.*/
+    }
+        
+    
+    nav{
+        display: none;
+        position: absolute; /*Deixou o meu header sobreposto*/
+        z-index: 99; /*Também serve para fazer isso, deixar ele sobreposto*/
+        width: 80%;
+        height: calc(100vh - 100px); /*Tem que fazer isso igual fiz no header para poder fazer com que o cabeçalho fique na altura certa pegando 100% da vh.*/
+        background-color: rgba(0, 0, 0, 0.9);
+        top: 100px; /*Como eu use o position, essa tag foi necessária para o meu cabeçalho abrir com uma margn de 100px no top para continuar do tamanho da vh.*/
+        right: 0px; /*Colou o meu header ao lado da tela na parte da direita.*/
+        
+    }
+    
+    .menu ul{
+        flex-direction: column; /*Deixei o meu header na vertical*/
+    }
+    
+    .menu li a{
+        border: 0; /*Tirei as border que tinha no fundo*/
+        margin-left: 30px;
+        font-weight: bold;
+        font-size: 20px;
+        height: 70px;
+    }
+    
+    .menu li.active a{
+        border: 0; /*Aqui também tirei a borda do meu ''li'' que estava com o active.*/
+        color: #B28756;
+    }
+
+
+    .banner h1{
+        font-size: 35px;
+    }
+    
+    .banner h2{
+        font-size: 17px;
+    }
+    
+    
+    
+    
+    
+    .section-aboutus{
+        flex-direction: column;
+    
+    }
+    
+    .section-aboutus-left p{
+        margin-left: 30px;
+        margin-right: 30px;
+
+    }
+    
+    .section-aboutus-left a{
+       margin-left: 125px;
+        margin-bottom: 30px;
+        
+    }
+    
+    .section-aboutus-right{
+        width: auto; /*Serviu para tirar a largura da minha imagem*/
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .section-aboutus-right img{
+        width: 100%; /*Foi necessário para tirar o tamanho fixo da imagem e fazer com que ela fique cetralizada.*/
+    }
+    
+    
+    
+    
+    
+    .section-services{
+        flex-wrap: wrap;
+    }
+    
+    .section-service{
+        min-width: 100%;
+        margin-bottom: 30px;
+    }
+    
+
+
+
+
+
+
+
+
+    .section-projects-filter{
+        margin-left: 55px;
+        margin-right: 55px;
+    } 
+    
+    .section-mural-photo{
+        width: 320px;
+    }
+
+    .section-projects-photoarea{
+        width: 300px;
+        height: 190px;
+    }
+    
+    
+    
+    
+    
+    .section-area-empresas{
+        margin-left: 40px;
+        margin-right: 20px;
+    }
+    
+    .section-logo-empresas{
+        margin-right: 25px;
+    }
+    
+    
+    
+    
+    
+    .section-price{
+       display: flex;
+       flex-wrap: wrap;
+       align-items: center;
+       justify-content: center;
+    }
+    
+    .section-price .price-area{
+        min-width: 50%;
+        margin-bottom: 30px;
+        margin: 20px 20px 20px 20px;
+        flex: 0;
+        
+    }
+    
+    
+    
+    
+    
+    .section-team{
+        max-width: 280px;
+    }
+
+
+
+    .section-premium .slidearea{
+        flex-direction: column;
+    }
+
+    .slidearea .section-premium-left img{
+        width: 250px;
+        margin: auto;
+        margin-left: 20px;
+    }
+
+    .slidearea .section-premium-right {
+        margin-top: 20px;
+        margin-left: 40px;
+    }
+
+    .section-premium-right .section-premium-item img{
+        width: 20px;
+        height: 20px;
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+
+    .section-premium-right .section-premium-item h4{
+        font-size: 15px;
+    }
+    .section-premium-right .section-premium-item p,span{
+        margin-right: 20px;
+    }
+    
+    
+    
+
+
+    
+    
+    .section-facts{
+        flex-wrap: wrap;
+    }
+    
+    .section-fact{
+        min-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+    .section-share .section-rede-social{
+        margin-left: 5px;
+        display: block;
+    }
+
+    .section-share .section-rede-social .img-share-social{
+        display: none;
+    }
+
+    .section-rede-social .tittle-share{
+        margin-right: 30px;
+    }
+    
+
+
+
+
+    .section-contact-us input[type=text], .section-contact-us textarea{
+        width: 90%;
+    }
+    .section-contact-us .section-form-contact{
+        flex-direction: column;
+    }
+
+    .section-contact-us .section-form-contact input{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .section-contact-us form input,textarea{
+        margin-left: 15px;
+    }
+
+
+
+
+    
+    
+    .section-map{
+        padding: 0px;
+        padding-bottom: 250px;
+    }
+    
+    .section-map-area{
+        width: auto;
+    }
+    
+    .section-map-info{
+        width: auto;
+    }
+    
+    .section-map-info-item{
+        margin-bottom: 20px;
+    }
+    
+    .section-map-info-item:last-child{
+        margin-bottom: 0px;
+    }
+    
+    
+    
+    
+    
+    
+    .section-footer{
+        flex-direction: column-reverse;
+    }
+    
+    .section-footer .redes-sociais-footer{
+        margin: auto;
+        margin-top: 20px;
+
+    }
+    
+    .text-footer{
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 20px;
+    }
+    
+    .section-body .form-footer{
+        margin-top:0px;
+        padding-bottom: 50px;
+    }
+    
+    footer{
+        padding-top: 0px;
+    }
+    
+    
+    }
+    

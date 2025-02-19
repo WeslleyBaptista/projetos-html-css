@@ -1,0 +1,141 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color:#202124;
+    margin: 0px;
+}
+
+.container{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+    color: white;
+    width: 100%;
+}
+
+.nav-list{ /*é a tag UL*/
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    margin: 0px 10px; /*Isso daqui foi para colocar um espaçamento entre os itens da lista*/
+}
+
+nav ul li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+nav span{
+    margin: 0 15px;
+}
+
+.container .logo-google{
+    margin:225px 0px 25px 0px;
+}
+
+.container .borda-pesquisa{
+    border-radius: 24px;
+    border: 1px solid grey;
+    width: 100%;
+    max-width: 600px;
+    padding: 8px 0px 8px 0px;
+}
+
+.container .borda-pesquisa:hover{
+    border-color: #19191a;
+    transition: ease-in-out 0.2s;
+    background-color: #303134;
+}
+
+.borda-pesquisa .barra-input{
+    background-color: #202124;
+    border: none;
+    width: 100%;
+    width: 450px;
+    height: 20px;
+    padding-top: 8px;
+}
+
+.borda-pesquisa .barra-input:hover{
+    background-color: #303134;
+}
+
+.borda-pesquisa .icon-left{
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.borda-pesquisa .icon-right{
+    padding-right: 8px;
+}
+
+
+.botao{
+    display: flex;
+    margin-top: 30px;
+}
+
+.botao button{
+    display: flex;
+    background-color:#303134;
+    margin-right: 13px;
+    height: 35px;
+    min-width: 54px;
+    padding: 8px 13px 8px 13px;
+    border: 1px solid #303134;
+    border-radius: 3px;
+    color: white;
+    font-size: 14px;
+    text-align: center;   
+}
+
+.botao button:hover{
+    border-color: rgb(128, 128, 128);
+    cursor:pointer;
+}
+
+footer{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    padding: 15px;
+    background-color: #19191a;
+}
+
+footer .br{
+    display: flex;
+    color: white;
+    font-size: 16px;
+    font-weight: 100;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(145, 145, 145);
+}
+
+footer .rodape{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-top: 13px;
+}
+
+footer .rodape a{
+    color: white;
+    text-decoration: none;
+    margin-right: 22px;
+}
+
+footer .rodape a:hover{
+    text-decoration: underline;
+}

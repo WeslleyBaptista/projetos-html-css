@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1 class="container">Escola Virtual</h1>
+    <h2 class="container">Formulário de Pré-matrícula</h2>
+    <div class="border"></div>
+
+        <form action="pesquisamatricula" method="post">
+            <div class="container">
+                <fieldset>
+                    <h3>Dados Pessoais:</h3>
+                    <label> Nome do aluno:
+                        <input type="text" required minlength="2">
+                    </label>
+                    <br>
+                    <label>Data de nascimento (dd/mm/aaaa)
+                        <input type="date">
+                    </label>
+                    <br>
+                    <label> Nome da mãe:
+                        <input type="text" name="mother">
+                    </label>
+                    <br>
+                    <label> Nome do pai:
+                        <input type="text" name="mother">
+                    </label>
+                    <br>
+                    <label> Telefone: DDD
+                        <input type="tel" name="number">
+                    </label>
+                    <br>
+                    <label> Email:
+                        <input type="email" name="email">
+                    </label>
+                </fieldset>
+            </div>
+
+            <div class="container">
+                <fieldset>
+                    <h3>Informações de Matrícula:</h3>
+                    <label for="serie"> Série:
+                        <select name="serie" id="serie">
+                            <option value="">Creche</option>
+                            <option value="">Fundamental</option>
+                            <option value="">Ensino Médio</option>
+                        </select>
+                    </label>
+                    <br>
+                    <label for=""> Turno:
+                        <label for=""><input type="radio" name="genero"> Manhã</label>
+                        <label for=""><input type="radio" name="genero">Tarde</label>
+                    </label>
+                    <br>
+                    <label>Atividades Extrascurriculares:
+                        <br>
+                        <input type="checkbox" id="info">
+                        <label for="info">Informática</label>
+                        <br>
+                        <input type="checkbox" id="music">
+                        <label for="music">Música</label>
+                        <br>
+                        <input type="checkbox" id="ballet">
+                        <label for="ballet">Ballet</label>
+                        <br>
+                        <input type="checkbox" id="pintura">
+                        <label for="pintura">Pintura</label>
+                        <br>
+                        <input type="checkbox" id="judo">
+                        <label for="judo">Judô</label>
+                        <br>
+                        <input type="checkbox" id="futebol">
+                        <label for="futebol">Futebol</label>
+                    </label>
+            
+
+
+
+                </fieldset>
+
+                <div id="envio">
+                    <label for="" >
+                        <input type="submit" value="Enviar Formulário">
+                    </label>
+                    <label for="">
+                        <input type="submit" value="Limpar Campos">
+                    </label>
+                </div>
+            </div>
+    
+    
+         </form>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

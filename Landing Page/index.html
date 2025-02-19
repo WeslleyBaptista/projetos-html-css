@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript">
+      window.onload = function (){
+          document.querySelector(".menuMobile").addEventListener("click", function(){
+            if (document.querySelector(".menu nav ul").style.display == 'flex'){
+              document.querySelector(".menu nav ul").style.display = 'none'
+            }else{
+                document.querySelector(".menu nav ul").style.display = 'flex'
+            }
+          });
+
+      }
+    </script>
+    
+</head>
+<body>
+  <header>
+    <div class="container">
+        <div class="menu">
+            <nav>
+                <div class="menuMobile">
+                    <div class="mm-line"></div>
+                    <div class="mm-line"></div>
+                    <div class="mm-line"></div>
+                </div>
+                <ul>
+                    <a href=""><li>EVENTOS</li></a>
+                    <a href=""><li>RANKINGS</li></a>
+                    <a href=""><li>ATLETAS</li></a>
+                    <a href=""><li>NOTICIAS</li></a>
+                    <a href=""><li id="ufc">UFC</li></a>
+                    <a href=""><li>UFC FANTASY</li></a>
+                    <a href=""><li>CONECTE-SE</li></a>
+                    <a href=""><li>ONDE ASSISTIR</li></a>
+                    <a href=""><li>.....</li></a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+  </header>
+
+  <section class="container">
+    <h1>UFC 303</h1>
+    <h2>UFC TOP REVANCHES</h2>
+    <p>Relembre as maiores rivalidades em disputas de título no UFC</p>
+      <div class="botao">
+        <div>
+                <button>SAIBA MAIS</butto>
+        </div>
+        <div>
+            <button>TODOS DO<br>RANKING</button>
+        </div>
+      </div>
+  </section>
+
+
+</body>
+</html>

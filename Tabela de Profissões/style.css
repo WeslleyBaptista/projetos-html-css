@@ -1,0 +1,20 @@
+table{
+    margin: auto;
+    margin-top: 200px;
+    width:400px;
+    border: 1px solid rgb(145, 143, 143);
+}
+
+thead{
+    background-color: rgb(163, 163, 163);
+    font-weight: bold;
+}
+
+tr, td{
+    padding: 10px;
+    text-align: center;
+}
+
+tbody tr:nth-child(odd){
+    background-color: chartreuse; /*Para eu conseguir fazer isso daqui eu precisei indicar que o ''nth-child'' iria funcionar só a partir do primeiro ''tr'' do tbody.*/
+}
