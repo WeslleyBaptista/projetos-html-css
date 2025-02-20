@@ -22,7 +22,6 @@ header{
     background-color: rgb(15, 15, 15);
     width: 900px;
     color: white;
-    padding-left: 10px;
 }
 
 .nome{
@@ -65,13 +64,21 @@ section{
    
 }
 
+.sobre{
+    background-color: white;
+    margin-top: 5px;
+}
+
 .sobre div{
-    text-indent: 30px;
+    text-indent: 20px;
     margin-left: 5px;
     margin-right: 5px;
     letter-spacing: 1px;
     line-height: 1.2;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    color: black;
+    margin-top: 5px;
+    
 }
 
 h1{
@@ -92,6 +99,8 @@ h1{
 footer{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
+    margin-top: 10px;
 }
 
 
