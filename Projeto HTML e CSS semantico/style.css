@@ -248,7 +248,12 @@ article .texto_resumo{
     font-size: 13px;
     color: black;
     line-height: 20px;
+}
 
+footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 
