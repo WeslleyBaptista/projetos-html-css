@@ -1,40 +1,43 @@
-body{
-    margin: 0px;
-    padding: 0px;
+body {
+    margin: 0;
+    padding: 0;
     background-image: url(imagem/imgfundo.jpg);
-    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
 }
 
-.container{
+header {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-header{
-    display: flex;
-    justify-content:space-between;
+    justify-content: center;
     align-items: center;
     background-color: white;
-    height: 80px;
-    max-width: 1250px;
-    width: 100%; /*Junto disso aqui*/
-    margin: 50px auto; /*isso aqui que me fez conseguir centralizar o meu header e colocar margin top nele*/
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
-.menu{
+ .container--section{
     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 300px;
 }
 
-nav ul{
+.menu nav ul {
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
+    align-items: center;
 }
 
-nav ul, nav li{
+.menu nav ul, nav li {
     list-style: none;
     padding: 17px;
     font-size: 13px;
@@ -43,125 +46,84 @@ nav ul, nav li{
 nav a {
     text-decoration: none;
     color: rgb(63, 62, 62);
-    font-weight:800;
-    font-size: 12px;
+    font-weight: 800;
 }
 
-nav a:hover{
+nav a:hover {
     color: red;
 }
 
-#ufc{
-    margin-left: 120px;
-    margin-right: 120px;
+#ufc {
+    margin: 0 20px;
     font-size: 20px;
     color: black;
 }
 
-nav #ufc:hover{
+nav #ufc:hover {
     color: red;
 }
 
-section{
+.botao {
     display: flex;
-    margin-top: 200px;
-}
-
-.botao{
-    display: flex;
-    margin-right: 10px;
+    gap: 10px;
     margin-top: 50px;
 }
 
-.botao button{
-    justify-content: space-around;
+.botao button {
     border: solid 2px black;
-    height: 70px;
-    width: 200px;
+    height: 50px;
+    width: 150px;
     color: black;
-    font-weight:bolder;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
-.menuMobile{
+.menuMobile {
     display: none;
+    flex-direction: column;
+    gap: 5px;
     width: 40px;
-    height: 40px;
-    margin: 20px 0 20px 5px;
+    cursor: pointer;
 }
 
-.mm-line{
+.mm-line {
     height: 3px;
-    background-color: rgb(0, 0, 0);
+    background-color: black;
 }
 
-@media only screen and (max-width: 600px){
-    header{
-        height: auto;
-        margin-top: 0px;
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        left: 0;
+        padding: 0;
     }
+    .menu nav ul.active {
+        display: flex;
+    }
+    
+    .menuMobile {
+        display: flex;
+    }
+}
 
-    p{
+@media (min-width: 700px) and (max-width: 1020px) {
+    .menu nav ul, nav li {
+        list-style: none;
+        padding: 5px;
+        font-size: 13px;
         text-align: center;
     }
 
-    h1{
-        margin-top:30px;
-    }
-
-    .botao button{
-        margin-right:10px;
-        width: 150px;
-        height: 60px;
-        
-    }
-
-    nav ul{
-        flex-direction: column;
-        display: none;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        background-color: white;
-    }
-
-    .menuMobile{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-
-}
-
-@media only screen and (min-width: 600px) and (max-width:768px){
-    
-    .botao button{
-        width:170px;
-        height: 70px;
-        margin-right: 10px;
+    #ufc {
+        margin: 0 15px;
+        font-size: 20px;
+        color: black;
+        text-align: center;
     }
 }
-    
-@media only screen and (min-width:768px) and (max-width:992px){
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav ul li {
-        margin: 5px 0;
-    }
-}
-
-@media only screen and (min-width:992pc) and (max-width:1200px){
-
-}
-
-
-
-

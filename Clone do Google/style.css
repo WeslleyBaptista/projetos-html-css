@@ -31,7 +31,7 @@ body{
 }
 
 nav ul li{
-    margin: 0px 10px; /*Isso daqui foi para colocar um espaçamento entre os itens da lista*/
+    margin: 0px 10px; 
 }
 
 nav ul li:hover{
