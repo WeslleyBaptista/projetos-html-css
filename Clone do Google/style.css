@@ -6,6 +6,8 @@
 body{
     background-color:#202124;
     margin: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .container{
@@ -44,39 +46,29 @@ nav span{
     margin:225px 0px 25px 0px;
 }
 
-.container .borda-pesquisa{
+.container .input-pesquisa{
     border-radius: 24px;
     border: 1px solid grey;
     width: 100%;
     max-width: 600px;
     padding: 8px 0px 8px 0px;
+    display: flex;
+    align-items: center;
 }
 
-.container .borda-pesquisa:hover{
+.container .input-pesquisa:hover{
     border-color: #19191a;
     transition: ease-in-out 0.2s;
     background-color: #303134;
 }
 
-.borda-pesquisa .barra-input{
-    background-color: #202124;
-    border: none;
-    width: 100%;
-    width: 450px;
-    height: 20px;
-    padding-top: 8px;
-}
-
-.borda-pesquisa .barra-input:hover{
-    background-color: #303134;
-}
-
-.borda-pesquisa .icon-left{
+.input-pesquisa .icon-left{
     padding-left: 10px;
     padding-top: 5px;
+    flex: 1;
 }
 
-.borda-pesquisa .icon-right{
+.input-pesquisa .icon-right{
     padding-right: 8px;
 }
 
