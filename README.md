@@ -1,2 +1,2 @@
 # Projetos-html-css
- Projetos em HTML5 e CSS3  que foram propostos pelo curso da B7Web.
+ Projetos em HTML5 e CSS3 feitos para colocar em prática mmeus aprendizados
